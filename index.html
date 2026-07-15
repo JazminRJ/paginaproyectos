@@ -1,130 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blender · Trabajos</title>
-    <link rel = "stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <header>
+    <h1>🌸 Tareas de🌸</h1>
+    <p>Computación e Informatica</p>
+</header>
 
-<div class="container">
+<!-- VIDEOS -->
+<section class="videos">
 
-    <!-- TÍTULO PRINCIPAL: BLENDER -->
-    <div class="title">
-        <h1>Blender</h1>
-        <span class="subtitulo">✦ trabajos ✦</span>
+    <div class="video-card">
+        <video controls>
+            <source src="/img/WhatsApp Video 2026-07-14 at 4.19.47 PM.mp4" type="video/mp4">
+        </video>
+        <h3>Video 1</h3>
     </div>
 
-    <!-- VIDEO DE BLENDER -->
-    <div class="video-section">
-    <video controls muted loop>
-        <source src="img/video.mp4" type="video/mp4" />
-        Tu navegador no soporta video HTML5.
-    </video>
-</div>
-
-    <!-- SEPARADOR BONITO: "mis imágenes" -->
-    <div class="seccion-tag">
-        <span class="deco">🌸</span>
-        <span>✦ mis imágenes ✦</span>
-        <span class="deco">🌸</span>
+    <div class="video-card">
+        <video controls>
+            <source src="/img/video.mp4" type="video/mp4">
+        </video>
+        <h3>Video 2</h3>
     </div>
 
-    <!-- GALERÍA DE IMÁGENES -->
-    <div class="grid">
+</section>
 
-        <!-- Tarjeta 1 - HERRAMIENTA -->
-        <div class="card" onclick="abrirLightbox('img/herramientas.png', 'Herramienta', 'Blender 4.0 · low-poly')">
-            <div class="card-img">
-                <img src="img/herramientas.png" alt="Herramienta" />
-                <span class="badge">✦ Herramientas</span>
-            </div>
-            <div class="card-content">
-                <h3>Herramienta</h3>
-                <div class="desc"><i>Blender 4.0</i> · low-poly</div>
-            </div>
-        </div>
+<!-- IMÁGENES -->
+<section class="imagenes">
 
-        <!-- Tarjeta 2 - HONGOS -->
-        <div class="card" onclick="abrirLightbox('img/hongitos.png', 'Hongos', 'Blender 3.6 · volumétrico')">
-            <div class="card-img">
-                <img src="img/hongitos.png" alt="Hongos" />
-                <span class="badge">✦ Frutas</span>
-            </div>
-            <div class="card-content">
-                <h3>Hongos</h3>
-                <div class="desc"><i>Blender 3.6</i> · volumétrico</div>
-            </div>
-        </div>
-
-        <!-- Tarjeta 3 - FRUTAS -->
-        <div class="card" onclick="abrirLightbox('img/Untitled.png', 'Frutas', 'Blender 4.2 · hard surface')">
-            <div class="card-img">
-                <img src="img/Untitled.png" alt="Frutas" />
-                <span class="badge">✦ Hombres</span>
-            </div>
-            <div class="card-content">
-                <h3>Frutas</h3>
-                <div class="desc"><i>Blender 4.2</i> · hard surface</div>
-            </div>
-        </div>
-
-        <!-- Tarjeta 4 - CALABAZA -->
-        <div class="card" onclick="abrirLightbox('img/calabaza.png', 'Calabaza', 'Blender 4.1 · materiales')">
-            <div class="card-img">
-                <img src="img/calabaza.png" alt="Calabaza" />
-                <span class="badge">✦ Calabaza</span>
-            </div>
-            <div class="card-content">
-                <h3>Calabaza</h3>
-                <div class="desc"><i>Blender 4.1</i> · materiales</div>
-            </div>
-        </div>
-
+    <div class="card">
+        <img src="/img/herramientas.png" alt="">
+        <h3>Imagen 1</h3>
     </div>
 
-    <!-- PIE BONITO -->
-    <div class="footer-love">
-        <span>❤️</span> hechos con Blender · 2026 <span>❤️</span>
+    <div class="card">
+        <img src="/img/Untitled.png" alt="">
+        <h3>Imagen 2</h3>
     </div>
 
-</div>
-
-<!-- ========== LIGHTBOX ========== -->
-<div id="lightbox" class="lightbox" onclick="cerrarLightbox(event)">
-    <span class="close-btn" onclick="cerrarLightbox(event)">✕</span>
-    <img id="lightbox-img" src="" alt="Imagen ampliada" />
-    <div class="info">
-        <span class="titulo" id="lb-titulo">Título</span> · <span id="lb-desc">Descripción</span>
+    <div class="card">
+        <img src="/img/hongitos.png" alt="">
+        <h3>Imagen 3</h3>
     </div>
-</div>
 
-<!-- ========== JAVASCRIPT ========== -->
-<script>
-    function abrirLightbox(src, titulo, desc) {
-        document.getElementById('lightbox-img').src = src;
-        document.getElementById('lb-titulo').textContent = titulo;
-        document.getElementById('lb-desc').textContent = desc;
-        document.getElementById('lightbox').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+    <div class="card">
+        <img src="img/calabaza.png" alt="">
+        <h3>Imagen 4</h3>
+    </div>
 
-    function cerrarLightbox(event) {
-        if (event.target === document.getElementById('lightbox') || 
-            event.target.classList.contains('close-btn')) {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    }
+</section>
 
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-</script>
-
+<footer>
+    Hecho con ❤️
+</footer>
 </body>
 </html>
+
